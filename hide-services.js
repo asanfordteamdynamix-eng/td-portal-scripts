@@ -1,18 +1,17 @@
 (function () {
-    function testServices() {
+    function hideServices() {
         var services = document.getElementById("divTDRequests");
 
         if (services) {
-            services.style.backgroundColor = "red";
-            services.style.border = "5px solid yellow";
+            services.style.setProperty("display", "none", "important");
         }
     }
 
     function start() {
-        testServices();
+        hideServices();
 
         var observer = new MutationObserver(function () {
-            testServices();
+            hideServices();
         });
 
         observer.observe(document.body, {
